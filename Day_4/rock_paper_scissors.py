@@ -46,10 +46,8 @@ if computer_choice == 0:
     print(rock)
 elif computer_choice == 1:
     print(paper)
-elif computer_choice == 2:
-    print(scissors)
 else:
-    print(f'No input for {computer_choice}')
+    print(scissors)
 
 if choice == 0 and computer_choice == 2:
     print('You win')
