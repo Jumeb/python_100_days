@@ -22,10 +22,7 @@ correct_states = []
 while len(correct_states) != 50:
     answer_state = screen.textinput(title=f"{len(correct_states)}/50 States", prompt="What's another state's name?").title()
     if answer_state == "Exit":
-        missing_states = []
-        for state in data.state.to_list():
-            if state not in correct_states:
-                missing_states.append(state)
+        missing_states = [n for n in data.state.to_list() if n not in correct_states]
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv("states_to_learn.csv")
         break
